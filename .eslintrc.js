@@ -21,11 +21,16 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.json', './next.config.js'],
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/react-in-jsx-scope': 0,
     'react/jsx-props-no-spreading': 0,
+    '@typescript-eslint/ban-types': 0,
+    'no-empty-pattern': 0,
+    'import/no-extraneous-dependencies': 0,
+    'no-new': 0,
+    '@next/next/no-html-link-for-pages': 0,
   },
 };
