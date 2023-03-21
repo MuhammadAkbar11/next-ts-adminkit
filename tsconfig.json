@@ -21,9 +21,33 @@
     "incremental": true,
     "jsx": "preserve",
     "paths": {
+      "@components/*": [
+        "./components/*"
+      ],
+      "@layouts/*": [
+        "./layouts/*"
+      ],
+      "@hooks/*": [
+        "./src/utils/hooks/*"
+      ],
+      "@configs/*": [
+        "./src/configs/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@images/*": [
+        "./public/images/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
       "@/*": [
         "./src/*"
-      ]
+      ],
     }
   },
   "include": [

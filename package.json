@@ -9,18 +9,43 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "not Edge < 79",
+    "Firefox ESR",
+    "iOS >= 10",
+    "Safari >= 10",
+    "Android >= 6",
+    "not Explorer <= 11"
+  ],
   "dependencies": {
+    "@types/chart.js": "2.9.4",
+    "@types/feather-icons": "^4.29.1",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "bootstrap": "^5.2.3",
+    "chart.js": "2.9.4",
+    "date-fns": "^2.29.3",
     "eslint-config-next": "13.2.4",
+    "flatpickr": "^4.6.13",
+    "jsvectormap": "^1.5.1",
     "next": "13.2.4",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
+    "simplebar": "^6.2.2",
+    "simplebar-react": "^3.2.2",
     "typescript": "5.0.2"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.2.4",
+    "@types/simplebar": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "eslint": "^8.2.0",
@@ -33,6 +58,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^8.0.0",
-    "prettier": "^2.8.0"
+    "prettier": "^2.8.0",
+    "sass": "^1.59.3"
   }
 }
