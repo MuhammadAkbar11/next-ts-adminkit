@@ -1,12 +1,7 @@
 import Chart from 'chart.js';
-import themeConfigs from './themeConfigs';
+import themeConfigs from '@configs/themeConfigs';
 
-const ChartJs = Chart;
-
-ChartJs.defaults.global.defaultFontFamily =
-  "'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
-
-export const chartsLineConfigs = (gradient: CanvasGradient) =>
+const chartsLineConfigs = (gradient: CanvasGradient) =>
   <Chart.ChartConfiguration>{
     type: 'line',
     data: {
@@ -78,4 +73,4 @@ export const chartsLineConfigs = (gradient: CanvasGradient) =>
     },
   };
 
-export default ChartJs;
+export default chartsLineConfigs;
