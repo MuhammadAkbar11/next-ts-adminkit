@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'classnames';
 import { FeatherIconsTypes } from '@utils/types';
 import { useRouter } from 'next/router';
-import DynamicFeatherIcon from '../Icons/DynamicFeatherIcon';
+import FeatherIcon from '../Icons/FeatherIcon';
 
 type Props = {
   href: string;
@@ -24,7 +24,7 @@ function SidebarItem(props: Props) {
   return (
     <li className={sidebarItemClsx}>
       <Link className="sidebar-link" href={href}>
-        <DynamicFeatherIcon className="align-middle" name={icon} size={18} />
+        <FeatherIcon className="align-middle" name={icon} size={18} />
         <span className="align-middle ms-1">{name}</span>
       </Link>
     </li>

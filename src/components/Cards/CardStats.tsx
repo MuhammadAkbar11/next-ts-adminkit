@@ -2,7 +2,7 @@ import { FeatherIconsTypes, ThemeTypes } from '@utils/types';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import clsx from 'classnames';
-import DynamicFeatherIcon from '../Icons/DynamicFeatherIcon';
+import FeatherIcon from '../Icons/FeatherIcon';
 
 type Props = {
   statTitle: string;
@@ -40,11 +40,7 @@ function CardStats({
           </Col>
           <Col xs="auto" className="col-auto">
             <div className={statIconClsx}>
-              <DynamicFeatherIcon
-                name={statIcon}
-                className="align-middle"
-                size={18}
-              />
+              <FeatherIcon name={statIcon} className="align-middle" size={18} />
             </div>
           </Col>
         </Row>

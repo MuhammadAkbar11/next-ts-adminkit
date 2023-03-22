@@ -6,7 +6,7 @@ type Props = {
   name: FeatherIconsTypes;
 } & RFIcon.IconProps;
 
-function DynamicFeatherIcon({ name, ...props }: Props) {
+function FeatherIcon({ name, ...props }: Props) {
   const Icon = RFIcon[
     `${name}` as FeatherIconsTypes
   ] as React.ElementType<RFIcon.IconProps>;
@@ -14,4 +14,4 @@ function DynamicFeatherIcon({ name, ...props }: Props) {
   return <Icon {...props} />;
 }
 
-export default DynamicFeatherIcon;
+export default FeatherIcon;

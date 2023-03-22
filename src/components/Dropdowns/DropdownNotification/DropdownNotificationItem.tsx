@@ -4,7 +4,7 @@ import { Col, ListGroupItem, Row } from 'react-bootstrap';
 import { FeatherIconsTypes, ThemeTypes } from '@utils/types';
 import themeConfigs from '@configs/themeConfigs';
 import { formatDistance } from 'date-fns';
-import DynamicFeatherIcon from '@/components/Icons/DynamicFeatherIcon';
+import FeatherIcon from '@components/Icons/FeatherIcon';
 
 type Props = {
   title: string;
@@ -36,7 +36,7 @@ function DropdownNotificationItem({
     <ListGroupItem as="a" href="/#">
       <Row className=" g-0 align-items-center">
         <Col xs={2}>
-          <DynamicFeatherIcon name={icon} color={iconColor} size={18} />
+          <FeatherIcon name={icon} color={iconColor} size={18} />
         </Col>
         <Col xs={10}>
           <div className="text-dark">{title}</div>
