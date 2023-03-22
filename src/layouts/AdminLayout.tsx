@@ -1,15 +1,22 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-underscore-dangle */
+import React from 'react';
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import Sidebar from '@/components/Sidebar/Sidebar';
-import React from 'react';
 
 type Props = {
   children: React.ReactNode;
 };
 
 function AdminLayout({ children }: Props) {
+  React.useEffect(() => {
+    const __nextEL = document.getElementById('__next') as HTMLDivElement;
+    __nextEL.classList.add('wrapper');
+  }, []);
+
   return (
-    <div className="wrapper">
+    <>
       <Sidebar />
       <div className="main">
         <Navbar />
@@ -17,7 +24,7 @@ function AdminLayout({ children }: Props) {
         {/* Footer */}
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
 
