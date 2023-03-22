@@ -7,7 +7,7 @@ const notificationsData: INotification[] = [
     message: 'You have received a new message from John',
     timestamp: new Date('2023-03-20T09:00:00Z'),
     read: false,
-    icon: 'bell',
+    icon: 'Bell',
     iconColor: 'warning',
   },
   {
@@ -16,7 +16,7 @@ const notificationsData: INotification[] = [
     message: 'You have received a payment of $100 from Jane',
     timestamp: new Date('2023-03-19T13:30:00Z'),
     read: true,
-    icon: 'dollar-sign',
+    icon: 'DollarSign',
     iconColor: 'success',
   },
   {
@@ -25,7 +25,7 @@ const notificationsData: INotification[] = [
     message: 'You have a new follower on Instagram',
     timestamp: new Date('2023-03-18T17:45:00Z'),
     read: false,
-    icon: 'user-plus',
+    icon: 'UserPlus',
     iconColor: 'primary',
   },
   {
@@ -34,7 +34,7 @@ const notificationsData: INotification[] = [
     message: 'A new version of the product is now available',
     timestamp: new Date('2023-03-17T11:15:00Z'),
     read: true,
-    icon: 'refresh-cw',
+    icon: 'RefreshCw',
     iconColor: 'info',
   },
   {
@@ -43,7 +43,7 @@ const notificationsData: INotification[] = [
     message: 'Please verify your account to access premium features',
     timestamp: new Date('2023-03-16T08:00:00Z'),
     read: false,
-    icon: 'shield',
+    icon: 'Shield',
     iconColor: 'danger',
   },
 ];

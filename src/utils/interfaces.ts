@@ -1,5 +1,4 @@
-import { FeatherIconNames } from 'feather-icons';
-import { ThemeTypes } from './types';
+import { FeatherIconsTypes, ThemeTypes } from './types';
 
 export interface INotification {
   id: string;
@@ -7,8 +6,16 @@ export interface INotification {
   message: string;
   timestamp: Date;
   read: boolean;
-  icon?: FeatherIconNames;
+  icon?: FeatherIconsTypes;
   iconColor?: ThemeTypes;
+}
+
+export interface IProject {
+  name: string;
+  startDate: string;
+  endDate: string;
+  status: 'In progress' | 'Done' | 'Cancelled';
+  assignedTo: string;
 }
 
 export interface IMessage {
