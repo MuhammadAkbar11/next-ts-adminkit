@@ -13,6 +13,10 @@ function AdminLayout({ children }: Props) {
   React.useEffect(() => {
     const __nextEL = document.getElementById('__next') as HTMLDivElement;
     __nextEL.classList.add('wrapper');
+
+    return () => {
+      __nextEL.classList.remove('wrapper');
+    };
   }, []);
 
   return (
