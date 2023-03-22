@@ -22,10 +22,10 @@
     "jsx": "preserve",
     "paths": {
       "@components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@layouts/*": [
-        "./layouts/*"
+        "./src/layouts/*"
       ],
       "@hooks/*": [
         "./src/utils/hooks/*"
