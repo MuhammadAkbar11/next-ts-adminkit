@@ -1,14 +1,14 @@
 /* eslint-disable no-new */
 import React from 'react';
-import AdminLayout from '@/layouts/AdminLayout';
-import CardChartsLine from '@/components/Cards/CardChartsLine';
+import AdminLayout from '@layouts/AdminLayout';
+import CardChartsLine from '@components/Cards/CardChartsLine';
 import { Col, Container, Row } from 'react-bootstrap';
-import CardStats from '@/components/Cards/CardStats';
-import CardFlatpickr from '@/components/Cards/CardFlatpickr';
-import CardChartsPie from '@/components/Cards/CardChartsPie';
-import CardWorldMap from '@/components/Cards/CardWorldMap';
-import CardChartsBar from '@/components/Cards/CardChartsBar';
-import TableProjects from '@/components/Tables/TableProjects';
+import CardStats from '@components/Cards/CardStats';
+import CardFlatpickr from '@components/Cards/CardFlatpickr';
+import CardChartsPie from '@components/Cards/CardChartsPie';
+import CardWorldMap from '@components/Cards/CardWorldMap';
+import CardChartsBar from '@components/Cards/CardChartsBar';
+import CardProjects from '@components/Cards/CardProjects';
 
 export default function Home() {
   return (
@@ -78,7 +78,7 @@ export default function Home() {
 
       <Row>
         <Col xs={12} lg={8} xxl={9} className=" d-flex">
-          <TableProjects />
+          <CardProjects />
         </Col>
         <Col xs={12} lg={4} xxl={3} className="d-flex">
           <CardChartsBar />

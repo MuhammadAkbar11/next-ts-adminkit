@@ -5,7 +5,7 @@ import projectsData from '@utils/dummyData/projects';
 
 type Props = {};
 
-function TableProjects({}: Props) {
+function CardProjects({}: Props) {
   return (
     <Card className="card flex-fill">
       <Card.Header className="card-header">
@@ -49,4 +49,4 @@ function TableProjects({}: Props) {
   );
 }
 
-export default TableProjects;
+export default CardProjects;
