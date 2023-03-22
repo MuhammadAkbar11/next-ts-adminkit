@@ -8,7 +8,7 @@ export default function Footer({}: Props) {
       <div className="container-fluid">
         <div className="row text-muted">
           <div className="col-6 text-start">
-            <p className="mb-0">
+            <div className="mb-0">
               <div>
                 <a
                   className="text-muted"
@@ -29,7 +29,7 @@ export default function Footer({}: Props) {
                 </a>{' '}
                 ©
               </div>
-            </p>
+            </div>
           </div>
           <div className="col-6 text-end">
             <ul className="list-inline">
