@@ -26,7 +26,7 @@ function DropdownUserProfile({}: Props) {
           className="avatar img-fluid rounded me-1"
           alt="Charles Hall"
         />{' '}
-        <span className="text-dark">Charles Hall</span>
+        <span className="text-dark me-1">Charles Hall</span>
       </Dropdown.Toggle>
       <Dropdown.Menu
         className="dropdown-menu-end"
