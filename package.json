@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3030",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -23,6 +23,7 @@
     "not Explorer <= 11"
   ],
   "dependencies": {
+    "@hookform/resolvers": "^3.0.0",
     "@react-jvectormap/core": "^1.0.4",
     "@react-jvectormap/world": "^1.1.2",
     "@types/chart.js": "2.9.4",
@@ -42,9 +43,11 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
+    "react-hook-form": "^7.43.7",
     "react-simple-maps": "^3.0.0",
     "simplebar-react": "^3.2.2",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.2.4",

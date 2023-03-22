@@ -32,5 +32,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'no-new': 0,
     '@next/next/no-html-link-for-pages': 0,
+    'jsx-a11y/label-has-associated-control': 0,
   },
 };
