@@ -6,6 +6,7 @@ import { useAdminLayoutContext } from '@utils/context/AdminLayoutContext';
 import SidebarBrand from './SidebarBrand';
 import SidebarHeader from './SidebarHeader';
 import SidebarItem from './SidebarItem';
+import SidebarItemCollapse from './SidebarItemCollapse';
 
 type Props = {};
 
@@ -34,8 +35,20 @@ export default function Sidebar({}: Props) {
           <SidebarHeader title="Pages" />
           <SidebarItem name="Dashboard" icon="Sliders" href="/" />
           <SidebarItem name="Profile" icon="User" href="/pages-profile" />
-          <SidebarItem name="Sign In" icon="LogIn" href="/pages-sign-in" />
-          <SidebarItem name="Sign Up" icon="UserPlus" href="/pages-sign-up" />
+          <SidebarItemCollapse
+            name="Auth"
+            icon="Users"
+            links={[
+              {
+                name: 'Sign In',
+                href: '/pages-sign-in',
+              },
+              {
+                name: 'Sign Up',
+                href: '/pages-sign-up',
+              },
+            ]}
+          />
           <SidebarItem name="Blank" icon="Book" href="/pages-blank" />
           {/* Tools & Components */}
           <SidebarHeader title="Tools & Components" />
