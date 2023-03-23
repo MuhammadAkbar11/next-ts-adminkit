@@ -1,62 +1,122 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable import/extensions */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
-import dynamic from 'next/dynamic';
 import { Card } from 'react-bootstrap';
-import worldMill from '@react-jvectormap/world/worldMill.json';
 import themeConfigs from '@configs/themeConfigs';
 
 type Props = {};
 
 const markers = [
   {
-    latLng: [31.230391, 121.473701],
+    coords: [31.230391, 121.473701],
     name: 'Shanghai',
   },
   {
-    latLng: [28.70406, 77.102493],
+    coords: [28.70406, 77.102493],
     name: 'Delhi',
   },
   {
-    latLng: [6.524379, 3.379206],
+    coords: [6.524379, 3.379206],
     name: 'Lagos',
   },
   {
-    latLng: [35.689487, 139.691711],
+    coords: [35.689487, 139.691711],
     name: 'Tokyo',
   },
   {
-    latLng: [23.12911, 113.264381],
+    coords: [23.12911, 113.264381],
     name: 'Guangzhou',
   },
   {
-    latLng: [40.7127837, -74.0059413],
+    coords: [40.7127837, -74.0059413],
     name: 'New York',
   },
   {
-    latLng: [34.052235, -118.243683],
+    coords: [34.052235, -118.243683],
     name: 'Los Angeles',
   },
   {
-    latLng: [41.878113, -87.629799],
+    coords: [41.878113, -87.629799],
     name: 'Chicago',
   },
   {
-    latLng: [51.507351, -0.127758],
+    coords: [51.507351, -0.127758],
     name: 'London',
   },
   {
-    latLng: [40.416775, -3.70379],
-    name: 'Madrid',
+    coords: [40.416775, -3.70379],
+    name: 'Madrid ',
   },
 ];
 
-const VectorMap = dynamic(
-  () => import('@react-jvectormap/core').then((m) => m.VectorMap),
-  { ssr: false }
-);
-
 function CardWorldMap({}: Props) {
-  const wrapperRef = React.useRef(null);
+  const effectRan = React.useRef(false);
+  const [map, setMap] = React.useState(null);
+
+  const initial = async () => {
+    try {
+      // @ts-ignore
+      const importJsVectorMap = await import(
+        // @ts-ignore
+        'jsvectormap/dist/js/jsvectormap'
+      );
+      // @ts-ignore
+      await import('jsvectormap/dist/maps/world');
+
+      const JsVectorMap = importJsVectorMap.default;
+      if (JsVectorMap) {
+        const setupMap = new JsVectorMap({
+          map: 'world',
+          selector: '#world_map',
+          zoomButtons: true,
+          markers,
+          regionStyle: {
+            initial: {
+              fill: themeConfigs['gray-300'],
+              justifyContent: 'center',
+            },
+          },
+          markerStyle: {
+            initial: {
+              r: 9,
+              strokeWidth: 7,
+              stokeOpacity: 0.4,
+              fill: themeConfigs.primary,
+            },
+            hover: {
+              fill: themeConfigs.primary,
+              stroke: themeConfigs.primary,
+            },
+          },
+          zoomOnScroll: false,
+        });
+        setMap(setupMap);
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to js jsvectormap import');
+    }
+  };
+
+  React.useEffect(() => {
+    // @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let setupmap: any;
+    if (effectRan.current === true) {
+      initial();
+      if (map) setupmap = map;
+    }
+    window.addEventListener('resize', () => {
+      setupmap?.updateSize();
+    });
+    return () => {
+      effectRan.current = true;
+      window.addEventListener('resize', () => {
+        setupmap?.updateSize();
+      });
+    };
+  }, []);
 
   return (
     <Card className="card flex-fill w-100">
@@ -67,36 +127,12 @@ function CardWorldMap({}: Props) {
       </Card.Header>
       <Card.Body className=" px-4">
         {/* <MapCon */}
-        <div id="world_map" ref={wrapperRef}>
-          <VectorMap
-            backgroundColor={themeConfigs['gray-100']}
-            map={worldMill}
-            markers={markers}
-            regionStyle={{
-              initial: {
-                fill: themeConfigs['gray-300'],
-                justifyContent: 'center',
-              },
-            }}
-            markerStyle={{
-              initial: {
-                // @ts-ignore
-                r: 7,
-                strokeWidth: 7,
-                strokeOpacity: 'revert',
-                stroke: themeConfigs.primary,
-                fill: themeConfigs.primary,
-              },
-              hover: {
-                fill: themeConfigs.primary,
-                stroke: themeConfigs.primary,
-                // @ts-ignore
-                r: 8,
-              },
-            }}
-            zoomOnScroll={false}
-          />
-        </div>
+        <div
+          id="world_map"
+          style={{
+            height: 350,
+          }}
+        />
       </Card.Body>
     </Card>
   );
