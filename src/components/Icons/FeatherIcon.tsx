@@ -14,4 +14,8 @@ function FeatherIcon({ name, ...props }: Props) {
   return <Icon {...props} />;
 }
 
+FeatherIcon.defaultProps = {
+  size: 18,
+} as Partial<Props>;
+
 export default FeatherIcon;
