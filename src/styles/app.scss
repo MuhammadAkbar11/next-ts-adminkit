@@ -33,6 +33,7 @@
 @import '~bootstrap/scss/list-group';
 @import '~bootstrap/scss/close';
 @import '~bootstrap/scss/helpers';
+@import '~bootstrap/scss/toasts';
 @import '~bootstrap/scss/utilities/api';
 
 // Theme mixins
@@ -56,6 +57,7 @@
 @import '3-components/sizing';
 @import '3-components/stat';
 @import '3-components/tables';
+@import '3-components/toast';
 @import '3-components/type';
 @import '3-components/wrapper';
 
