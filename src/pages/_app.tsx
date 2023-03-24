@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app';
 import { SSRProvider } from 'react-bootstrap';
 import Head from 'next/head';
 import ComposeCtxProvider from '@utils/context';
+import ToastsWrapper from '@components/Toasts/ToastsWrapper';
 
 type NextPageComponentProps = NextPage & {
   provider?: React.ComponentType;
@@ -46,7 +47,8 @@ export default function App({ Component, pageProps }: AppPropsWrapp) {
         <ComposeCtxProvider>
           <Layout>
             <Component {...pageProps} />
-          </Layout>{' '}
+          </Layout>
+          <ToastsWrapper />
         </ComposeCtxProvider>
       </SSRProvider>
     </>
