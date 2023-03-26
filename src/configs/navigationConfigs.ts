@@ -98,6 +98,11 @@ const navigationConfigs: INavigation = {
         href: '/toasts',
       },
       {
+        name: 'Table',
+        icon: 'List',
+        href: '/tables-react',
+      },
+      {
         name: 'Charts',
         icon: 'BarChart2',
         href: '/charts-chartjs',

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FeatherIconsTypes, ThemeTypes } from './types';
 
 export interface INotification {
@@ -25,4 +26,16 @@ export interface IMessage {
   timestamp: Date;
   read: boolean;
   image?: string;
+}
+
+export interface IPerson {
+  [x: string]: any;
+  id: number;
+  firstName: string;
+  lastName: string;
+  age: number;
+  visits: number;
+  progress: number;
+  status: 'relationship' | 'complicated' | 'single';
+  createdAt: Date;
 }
