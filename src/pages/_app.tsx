@@ -5,9 +5,13 @@ import React from 'react';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { SSRProvider } from 'react-bootstrap';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Head from 'next/head';
 import ComposeCtxProvider from '@utils/context';
 import ToastsWrapper from '@components/Toasts/ToastsWrapper';
+
+const queryClient = new QueryClient();
 
 type NextPageComponentProps = NextPage & {
   provider?: React.ComponentType;
@@ -43,14 +47,17 @@ export default function App({ Component, pageProps }: AppPropsWrapp) {
         />
         <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
       </Head>
-      <SSRProvider>
-        <ComposeCtxProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <ToastsWrapper />
-        </ComposeCtxProvider>
-      </SSRProvider>
+      <QueryClientProvider client={queryClient}>
+        <SSRProvider>
+          <ComposeCtxProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            <ToastsWrapper />
+          </ComposeCtxProvider>
+        </SSRProvider>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </>
   );
 }
