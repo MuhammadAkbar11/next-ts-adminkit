@@ -5,12 +5,16 @@ interface INavigationSubItems {
   href: string;
   badge?: string;
   bagdeColor?: ThemeTypes;
+  disabled?: boolean;
 }
 
 interface INavigationItem {
   name: string;
   icon: FeatherIconsTypes;
   href?: string;
+  disabled?: boolean;
+  badge?: string;
+  bagdeColor?: ThemeTypes;
   navSubItems?: INavigationSubItems[];
 }
 
@@ -66,25 +70,34 @@ const navigationConfigs: INavigation = {
           {
             name: 'Alerts',
             href: '/ui-alerts',
+            badge: 'Soon',
+            disabled: true,
           },
           {
             name: 'Buttons',
             href: '/ui-buttons',
+            badge: 'Soon',
+            disabled: true,
           },
           {
             name: 'Cards',
             href: '/ui-cards',
+            badge: 'Soon',
+            disabled: true,
           },
         ],
       },
       {
         name: 'Forms',
         icon: 'CheckSquare',
+        badge: 'Soon',
+        disabled: true,
         href: '/ui-forms',
       },
       {
         name: 'Icons',
         icon: 'Coffee',
+
         href: '/ui-feather',
       },
     ],
@@ -93,9 +106,9 @@ const navigationConfigs: INavigation = {
     title: 'Plugins & Addons',
     navItems: [
       {
-        name: 'Toast',
+        name: 'Notification',
         icon: 'Bell',
-        href: '/toasts',
+        href: '/notification',
       },
       {
         name: 'Table',
@@ -106,6 +119,8 @@ const navigationConfigs: INavigation = {
         name: 'Charts',
         icon: 'BarChart2',
         href: '/charts-chartjs',
+        badge: 'Soon',
+        disabled: true,
       },
       {
         name: 'Map',
@@ -114,10 +129,14 @@ const navigationConfigs: INavigation = {
           {
             name: 'Google Map',
             href: '/map-google',
+            badge: 'Soon',
+            disabled: true,
           },
           {
             name: 'JVectorMap',
             href: '/map-jvectormap',
+            badge: 'Soon',
+            disabled: true,
           },
         ],
       },

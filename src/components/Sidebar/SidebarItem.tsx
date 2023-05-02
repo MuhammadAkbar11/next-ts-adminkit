@@ -11,25 +11,30 @@ type Props = {
   icon: FeatherIconsTypes;
   badge?: string | null;
   bagdeColor?: ThemeTypes;
+  disabled?: boolean;
 };
 
 function SidebarItem(props: Props) {
-  const { href, name, icon, badge, bagdeColor } = props;
+  const { href, name, icon, badge, bagdeColor, disabled } = props;
   const { pathname } = useRouter();
 
   const sidebarItemClsx = clsx('sidebar-item', {
     active: href === pathname,
   });
-
   return (
     <li className={sidebarItemClsx}>
-      <Link className="sidebar-link" href={href}>
+      <Link
+        className="sidebar-link"
+        href={href}
+        // onClick={(e) => {
+        //   if (disabled) e.preventDefault();
+        // }}
+      >
         <FeatherIcon className="align-middle" name={icon} size={18} />
         <span className="align-middle ms-1">{name}</span>
         <span
           className={clsx('sidebar-badge badge', {
             [`bg-${bagdeColor}`]: bagdeColor,
-            'bg-primary': !bagdeColor,
           })}
         >
           {badge}
@@ -42,6 +47,7 @@ function SidebarItem(props: Props) {
 SidebarItem.defaultProps = {
   bagdeColor: 'primary',
   badge: null,
+  disabled: false,
 } as Partial<Props>;
 
 export default SidebarItem;

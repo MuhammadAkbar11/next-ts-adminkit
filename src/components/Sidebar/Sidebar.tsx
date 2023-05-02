@@ -56,6 +56,9 @@ export default function Sidebar({}: Props) {
                       icon={nv.icon}
                       href={nv?.href ?? '#/'}
                       key={navKey}
+                      badge={nv.badge}
+                      disabled={nv.disabled}
+                      bagdeColor={nv.bagdeColor}
                     />
                   );
                 })}

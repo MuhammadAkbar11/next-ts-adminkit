@@ -11,6 +11,7 @@ type SubLinkItems = {
   href: string;
   badge?: string;
   bagdeColor?: ThemeTypes;
+  disabled?: boolean;
 };
 
 type Props = {
@@ -40,6 +41,7 @@ function SidebarItemCollapse({ icon, name, links }: Props) {
   const sidebarItemClsx = clsx('sidebar-item', {
     active: isActive,
   });
+
   return (
     <li className={sidebarItemClsx}>
       <a
@@ -61,9 +63,16 @@ function SidebarItemCollapse({ icon, name, links }: Props) {
                 const subLinkClsx = clsx('sidebar-item', {
                   active: lk.href === pathname,
                 });
+
                 return (
                   <li key={key} className={subLinkClsx}>
-                    <Link className="sidebar-link" href={lk.href}>
+                    <Link
+                      className="sidebar-link"
+                      href={lk.href}
+                      onClick={(e) => {
+                        if (lk.disabled) e.preventDefault();
+                      }}
+                    >
                       {lk.name}
                       {lk?.badge ? (
                         <span
